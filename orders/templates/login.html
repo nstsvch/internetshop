@@ -1,0 +1,19 @@
+{% extends 'main/base.html'%}
+
+{% block title%}
+Авторизация
+{% endblock %}
+
+{% block content%}
+<div>
+    <br><br><br><h2>Авторизация</h2><br><br>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Введите логин" class="form js-login-form" maxlength="100"><br><br>
+        <input type="password" placeholder="Введите пароль" class="form js-password-form"><br><br>
+
+        <button type="submit" class="btn btn-success" value="Войти">Добавить</button>
+    </form>
+</div>
+
+{% endblock %}

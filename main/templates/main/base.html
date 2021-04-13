@@ -1,0 +1,44 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'internetshop.css' %}">
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+            <nav class="nav nav-masthead justify-content-end">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="login">Войти</a>
+                <a class="nav-link" href="#">Избранное</a>
+                <a class="nav-link" href="#">Корзина</a>
+            </nav>
+        </div>
+      </header>
+
+    {% block content %}
+
+    <h1 class="cover-heading" align="center">Summer collection</h1>
+      <body class="d-flex h-100 text-center text-white bg-dark">
+        <main role="main" class="inner cover">
+            <p class="lead">
+                <a href="collection" class="btn btn-lg btn-secondary">New collection</a>
+            </p>
+        </main>
+      </body>
+</div>
+{% endblock %}

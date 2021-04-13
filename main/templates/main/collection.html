@@ -1,0 +1,19 @@
+{% extends 'main/base.html'%}
+
+{% block title%}
+Коллекция
+{% endblock %}
+
+{% block content%}
+<br><br><br><h2>Коллекция</h2><br><br>
+{% if products %}
+    {%for product in products%}
+        Name: {{ product.name }}<br>
+        Image: {{ product.image }} <br>
+        Description: {{ product.description }} <br>
+        Price: {{ product.price }} <br>
+        <br>
+    {%endfor%}
+{% else %} Товары не загружены
+{% endif %}
+{% endblock %}
