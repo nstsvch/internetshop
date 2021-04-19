@@ -5,15 +5,17 @@
 {% endblock %}
 
 {% block content%}
-<br><br><br><h2>Коллекция</h2><br><br>
-{% if products %}
-    {%for product in products%}
-        Name: {{ product.name }}<br>
-        Image: {{ product.image }} <br>
-        Description: {{ product.description }} <br>
-        Price: {{ product.price }} <br>
-        <br>
-    {%endfor%}
-{% else %} Товары не загружены
-{% endif %}
+<body class="h-100 text-center text-white bg-dark">
+    <br><br><br><h2>Коллекция</h2><br><br>
+    {% if products %}
+        {%for product in products%}
+            Name: {{ product.name }}<br>
+            Image: {{ product.product_image }} <img src="C:/Users/a5rs5/django_projects/internetshop/{{ product.product_image }}" alt=""><br>
+            Description: {{ product.description }} <br>
+            Price: {{ product.price }} <br>
+            <br>
+        {%endfor%}
+    {% else %} Товары не загружены
+    {% endif %}
+</body>
 {% endblock %}

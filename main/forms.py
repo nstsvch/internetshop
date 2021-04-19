@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 class RegistrationForm(UserCreationForm):
     username = forms.CharField(label='Имя пользователя', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    phone = forms.CharField(required=True, label='Телефон', widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(required=True, label='Почта', widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    phone = forms.CharField(required=True, label='Телефон', widget=forms.TextInput(attrs={'class': 'form-control'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     class Meta:
