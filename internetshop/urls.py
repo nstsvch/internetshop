@@ -20,13 +20,13 @@ from django.urls import path, include
 from django.views.generic import ListView
 
 from main.models import Product
-from main.views import show_all, login, register, home_page
+from main.views import show_all, register, home_page, user_login
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
-    path('login', login),
+    path('login', user_login),
     path('register', register),
     path('collection', show_all),
 ]

@@ -4,49 +4,13 @@
 Авторизация
 {% endblock %}
 
-<!--{% block content%}-->
-<body class="h-100 text-center text-white bg-dark">
+{% block content%}
+
     <br><br><br><h2>Авторизация</h2><br><br>
     <form method="post">
         {% csrf_token %}
-        <input type="text" placeholder="Введите логин" class="form js-login-form" maxlength="100"><br><br>
-        <input type="password" placeholder="Введите пароль" class="form js-password-form"><br><br>
-
-        <button type="submit" class="btn btn-success" value="Войти">Добавить</button>
+            {{ form }}
+            <button type="submit" class="btn btn-info">Войти</button>
     </form>
-</body>
 
-<!--{% endblock %}-->
-<!--{% block content%}-->
-
-<!--<body class="text-center text-white">-->
-<!--  <form method="post">-->
-<!--    {% csrf_token %}-->
-
-<!--  {% if user.is_authenticated %}-->
-<!--    <p>Your account doesn't have access to this page. To proceed,-->
-<!--    please login with an account that has access.</p>-->
-<!--  {% else %}-->
-<!--    <p>Please login to see this page.</p>-->
-<!--  {% endif %}-->
-
-<!--    <table>-->
-<!--    <tr>-->
-<!--      <td>Ваш логин</td>-->
-<!--      <td>{{ form.username }}</td>-->
-<!--    </tr>-->
-
-<!--    <tr>-->
-<!--      <td>Пароль</td>-->
-<!--      <td>{{ form.password }}</td>-->
-<!--    </tr>-->
-<!--    </table>-->
-
-<!--    <input type="submit" value="login" />-->
-<!--    <input type="hidden" name="next" value="{{ next }}" />-->
-<!--    </form>-->
-
-
-<!--    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
-<!--</body>-->
-<!--{% endblock %}-->
+{% endblock %}
