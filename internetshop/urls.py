@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import ListView
 
+from basket.views import basket
 from main.models import Product
 from main.views import show_all, register, home_page, user_login
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path('login', user_login),
     path('register', register),
     path('collection', show_all),
+    path('basket', basket)
 ]
 
 # urlpatterns += [

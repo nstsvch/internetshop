@@ -16,11 +16,11 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
+    category = models.ForeignKey(ProductCategory, verbose_name="Категория", on_delete=models.PROTECT)
     name = models.CharField(verbose_name='Название товара', max_length=100)
-    product_image = models.ImageField(verbose_name='Изображение', blank=True, null=True) #upload_to='images',
+    product_image = models.ImageField(verbose_name='Изображение', upload_to='main/static/images', blank=True, null=True)
     description = models.CharField(verbose_name='Описание товара', max_length=200)
     price = models.PositiveIntegerField(verbose_name="Цена", default=0)
-    category = models.ForeignKey(ProductCategory, verbose_name="Категория", on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Товар'

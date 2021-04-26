@@ -6,12 +6,12 @@
 
 {% block content%}
 
-<body class="h-100 text-center text-white bg-dark">
+<body class="text-center text-white bg-dark">
     <br><br><br><h2>Коллекция</h2><br><br>
     {% if products %}
         {%for product in products%}
             Name: {{ product.name }}<br>
-            Image:  {{ product.product_image }} <img src="{{ product.product_image }}" alt=""><br>
+            Image: <img src="{{ product.product_image.url }}" alt="No picture" width="18%"><br>
             Description: {{ product.description }} <br>
             Price: {{ product.price }} <br>
             <br>
