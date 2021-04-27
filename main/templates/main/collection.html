@@ -6,18 +6,20 @@
 
 {% block content%}
 
-<body class="text-center text-white bg-dark">
-    <br><br><br><h2>Коллекция</h2><br><br>
-    {% if products %}
-        {%for product in products%}
-            Name: {{ product.name }}<br>
-            Image: <img src="{{ product.product_image.url }}" alt="No picture" width="18%"><br>
-            Description: {{ product.description }} <br>
-            Price: {{ product.price }} <br>
-            <br>
-        {%endfor%}
-    {% else %} Товары не загружены
-    {% endif %}
+<body>
+<br><br><br><h2>Коллекция</h2><br><br>
+    <div class="collection">
+        {% if products %}
+            {%for product in products%}
+                <img src="{{ product.product_image.url }}" alt="No picture" width="18%"><br>
+                {{ product.name }}<br>
+                {{ product.description }} <br>
+                Цена: {{ product.price }} <br>
+                <br>
+            {%endfor%}
+        {% else %} Товары не загружены
+        {% endif %}
+    </div>
 </body>
 
 {% endblock %}

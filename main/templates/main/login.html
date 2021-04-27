@@ -6,11 +6,16 @@
 
 {% block content%}
 
-    <br><br><br><h2>Авторизация</h2><br><br>
-    <form method="post">
-        {% csrf_token %}
-            {{ form }}
-            <button type="submit" class="btn btn-info">Войти</button>
-    </form>
-
+<body>
+    <div class="login">
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                 <button type="submit" class="btn btn-info">Войти</button>
+            </form>
+        <br> У Вас нет аккаунта? <br><br>
+            <a href="register" class="btn">Зарегистрироваться</a>
+        </div>
+    </div>
+</body>
 {% endblock %}

@@ -1,5 +1,5 @@
 <!doctype html>
-{% load static %}
+<!--{% load static %}-->
 <html lang="en">
 
 <head>
@@ -10,22 +10,26 @@
         {% endblock %}
     </title>
     {% block css %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
     {% endblock %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
-<header class="d-right flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 bg-dark border-bottom box-shadow">
-      <nav class="nav nav-masthead justify-content-end">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="#">Избранное</a>
-          <a class="nav-link" href="basket">Корзина</a>
-          <a class="nav-link" href="login">Войти</a> | <a class="nav-link" href="register">Регистрация</a>
-      </nav>
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">Logo</div>
+
+            <nav class="nav">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="#">Избранное</a>
+                <a class="nav-link" href="basket">Корзина</a>
+                <a class="nav-link" href="login">Войти</a>
+            </nav>
+        </div>
+    </div>
 </header>
+
 
     {% if messages %}
     {% for message in messages %}
@@ -44,10 +48,10 @@
 
 {% block content %}
     <h1 class="cover-heading" align="center">Summer collection</h1>
-      <body class="h-100 text-white bg-dark">
+      <body>
         <main role="main" class="inner cover">
             <p class="lead" align="center">
-                <a href="collection" class="btn btn-lg btn-secondary">New collection</a>
+                <a href="collection" class="btn">New collection</a>
             </p>
         </main>
       </body>
